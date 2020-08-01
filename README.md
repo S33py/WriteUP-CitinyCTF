@@ -9,3 +9,7 @@ J'ai donc essayé de voir en quoi le prog était packé, pour ce faire je l'ai d
 <img src="https://media.discordapp.net/attachments/736537536054296636/739248071355007026/unknown.png"/><br/><br/> 
 On constate que l'OEP a été modifié par un packer, dorénavant la section de l'EP a été assigné par UPX1. Ce qui veut dire que le programme a été packé en UPX. Désassemblons le programme, pour ma part j'ai utilisé Odbg110, mais rien ne vous empêche d'utiliser un autre désassembleur. Voici ce que nous obtenons.<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739254144254214206/unknown.png?width=1786&height=890"/><br/><br/>
+Je vais vous expliquer ce que fait UPX, histoire que vous sachez de quoi on parle. UPX marche avec un loader qui va chiffrer le code dans l'EP. Quand le programme sera exécuté il sera déchiffré. L'EP du loader se trouve dans le PUSHAD et la routine du déchiffrage se termine au POPAD. J'ai donc désassemblé le programme et je me suis rendu au POPAD. Logiquement, derrière il y aura un JMP vers l'adresse de l'EOP, je mets un breakpoint dans le JMP vers l'adresse de l'EOP, puis je n'avais plus qu'à faire F7 et le tour était joué, je me retrouve dans l'EOP du programme qui là ne sera plus packé. Quelques images pour vous aider à comprendre.
+
+
+
