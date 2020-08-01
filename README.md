@@ -5,4 +5,7 @@ Salut à tous, aujourd'hui je vous présente mon WU du CitinyCTF présenté dans
 ## Unpacking UPX
 La première étape consistait à bypass le GetDlgItemText() importé par user32.dll où il nous demande d'insérer un mot de passe pour accéder au CTF. </br><br/>
 <img src="https://media.discordapp.net/attachments/736536361258975253/738879854207959133/unknown.png"/><br/><br/>
-J'ai donc essayé de voir en quoi le prog était packé, pour ce faire je l'ai d'abord désasemblé 
+J'ai donc essayé de voir en quoi le prog était packé, pour ce faire je l'ai d'abord glissé dans PEID ce qui m'a donné ce résultat.<br/><br/>
+<img src="https://media.discordapp.net/attachments/736537536054296636/739248071355007026/unknown.png"/><br/><br/> 
+On constate que l'OEP a été modifié par un packer, dorénavant la section de l'EP a été assigné par UPX1. Ce qui veut dire que le programme a été packé en UPX. Désassemblons le programme, pour ma part j'ai utilisé Odbg110, mais rien ne vous empêche d'utiliser un autre désassembleur. Voici ce que nous obtenons.<br/><br/>
+<img src="https://media.discordapp.net/attachments/736537536054296636/739254144254214206/unknown.png?width=1786&height=890"/><br/><br/>
