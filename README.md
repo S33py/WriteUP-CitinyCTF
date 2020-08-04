@@ -11,16 +11,16 @@ On constate que l'OEP a été modifié par un packer, dorénavant la section de 
 <img src="https://media.discordapp.net/attachments/736537536054296636/739254144254214206/unknown.png?width=1786&height=890"/><br/><br/>
 Je vais vous expliquer ce que fait UPX, histoire que vous sachez de quoi on parle. UPX marche avec un loader qui va chiffrer le code dans l'EP. Quand le programme sera exécuté il sera déchiffré. L'EP du loader se trouve dans le PUSHAD et la routine du déchiffrage se termine au POPAD. J'ai donc désassemblé le programme et je me suis rendu au POPAD. Logiquement, derrière il y aura un JMP vers l'adresse de l'EOP, je mets un breakpoint dans le JMP vers l'adresse de l'EOP, puis je n'avais plus qu'à faire F7 et le tour était joué, je me retrouve dans l'EOP du programme qui là ne sera plus packé. Quelques images pour vous aider à comprendre.<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739911499002150912/unknown.png?width=1393&height=343"/><br/><br/>
-Dans l'image au dessus, je me suis rendu au POPAD et j'ai défilé l'instruction MOV qui a affecté la stack (pile) ESP.<br/><br/>
+Dans l'image au dessus, je me suis rendu au POPAD et j'ai défilé l'instruction MOV qui a affecté le registre ESP (registre qui va délimiter la stack).<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739914059427610745/unknown.png?width=1225&height=656"/><br/><br/>
-Je sélectionne ESP, je fais un clique droit et je suis l'interaction du Dump. Ensuite je sélectionne les 4 premiers octets null de ESP, clique droit -> Hardware on access et WORD car ça ne dépasse pas les 4 octets.<br/><br/>
+Je sélectionne ESP, je fais un clique droit et je clique sur suivre l'interaction du Dump. Ensuite je sélectionne les 4 premiers octets null de ESP, clique droit -> Hardware on access et WORD car ça ne dépasse pas les 4 octets.<br/><br/>
 ## Premier Challenge
 Voici le premier challenge, lisons et analysons.<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739916447031099602/unknown.png?width=751&height=269"/><br/><br/>
 La solution se trouvait dans l'indice, si on lit bien on constate qu'il a tenté d'accentuer le mot FairPlay on y ajoutant deux majuscules. 
-Mais pourquoi ? Eh bien, j'ai tout simplement inversé les mots Fair et Play ce qui a donné "Playfair", ensuite j'ai fait une simple recherche google avec comme mots clés "Playfair Cipher" et voici le résultat.<br/><br/>
+Mais pourquoi ? Eh bien, j'ai tout simplement inversé les mots Fair et Play ce qui donne "Playfair", ensuite j'ai fait une simple recherche google avec les mots clés "Playfair Cipher" et voici le résultat.<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739917427009388544/unknown.png?width=1173&height=656"/><br/></br>
-Il s'agissait donc du cipher PlayFair, passons au déchiffrage. Alors pour ce faire, j'ai deux méthodes, soit vous le faites avec un automatisateur (par ex. https://www.dcode.fr/chiffre-playfair) soit à la main. Personnellement j'ai opté pour le faire à la main, c'est bien plus fun. Voici comment j'ai procédé.<br/><br/>
+Il s'agit donc du cipher PlayFair, passons au déchiffrage. Pour ce faire, j'ai deux méthodes, soit vous le faites avec un automatisateur de tâche (par ex.: https://www.dcode.fr/chiffre-playfair), soit à la main. Personnellement j'ai opté pour la solution de le faire à la main, c'est bien plus fun. Voici comment j'ai procédé (Lisez biens les règles du Cipher PlayFair).<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739922498069594112/unknown.png?width=965&height=242"/><br/><br/>
 YN devient NO<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739921057284358215/unknown.png?width=960&height=232"/><br/><br/>
@@ -48,6 +48,6 @@ XA devient KL<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739926347844943942/unknown.png?width=953&height=240"/><br/><br/>
 QD devient MB<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739927084884951145/unknown.png?width=399&height=40"/><br/><br/>
-Après avoir assemblé tous les résultats, on obtient le résultat ci-dessus, c'est donc le FLAG.<br/><br/>
+Après avoir assemblé tous les résultats, on obtient le résultat final ci-dessus, c'est donc le FLAG.<br/><br/>
 ## Deuxième Challenge
 Nous voici au second challenge, on a donc bien réussi le premier. Lisons et analysons.
