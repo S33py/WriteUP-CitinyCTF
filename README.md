@@ -50,4 +50,19 @@ QD devient MB<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739927084884951145/unknown.png?width=399&height=40"/><br/><br/>
 Après avoir assemblé tous les résultats, on obtient le résultat final ci-dessus, c'est donc le FLAG.<br/><br/>
 ## Deuxième Challenge
-Nous voici au second challenge, on a donc bien réussi le premier. Lisons et analysons.
+Nous voici au second challenge, on a donc bien réussi le premier. Lisons et analysons.<br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740950935076864051/unknown.png"/><br/><br/>
+A priori on voit dans l'indice qu'il s'agit de l'alphabet, si on regarde le Cipher du challenge précédent on constate que c'est l'alphabet mais décalé. Connaissant le chiffrement Caesar je me suis directement mis à compter le nombre de décalage qu'il y avait entre celui ci et le vrai alphabet. La réponse est 13, on parle donc du chiffrement ROT13. La méthode de déchiffrage consiste à comparer chaque lettre du message chiffré entre le Cipher et l'alphabet. J'ai donc fait un petit script en python pour automatiser la tâche.<br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740955593312960532/unknown.png"/><br/><br/>
+On obtient comme résultat "FTCynitic", on insère le flag et hop on se retrouve au prochain challenge. Deuxième étape réussie.<br/><br/>
+## Troisième Challenge
+Nous voisi au troisième challenge, vous connaissez la chanson, lisons et analysons.<br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740956105244540938/unknown.png"/><br/><br/>
+Comme indice on nous dit d'utiliser notre cerveau, je suppose donc qu'on devra trouver le moyen de déchiffrer la key sans sources externes.
+Pour résoudre ce challenge j'ai tout simplement comparé chaque lettre par colonnes, la key du challenge précédent était "FTCynitic" et la passphase est "dnourorju".
+Je compare donc "F" avec "d" à travers les colonnes et j'obtiens la lettre "s".<br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740957921025982484/unknown.png"/><br/><br/>
+J'ai donc continué sur cette voie.<br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740958555883962489/unknown.png"/><br/><br/>
+J'ai donc fait la même chose pour chaque lettre jusqu'à obtenir le résultat "Seailking". C'est donc le flag final.
+J'ai demandé à Seepy si c'était bien ça et il a confirmé. Je vous remercie d'avoir lu cette WriteUP, il y aura d'autres WriteUPs dans le futur.
