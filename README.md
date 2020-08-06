@@ -53,7 +53,7 @@ Après avoir assemblé tous les résultats, on obtient le résultat final ci-des
 Nous voici au second challenge, on a donc bien réussi le premier. Lisons et analysons.<br/><br/>
 <img src="https://media.discordapp.net/attachments/740207755410800720/740950935076864051/unknown.png"/><br/><br/>
 A priori on voit dans l'indice qu'il s'agit de l'alphabet, si on regarde le Cipher du challenge précédent on constate que c'est l'alphabet mais décalé. Connaissant le chiffrement Caesar je me suis directement mis à compter le nombre de décalage qu'il y avait entre celui ci et le vrai alphabet. La réponse est 13, on parle donc du chiffrement ROT13. La méthode de déchiffrage consiste à comparer chaque lettre du message chiffré entre le Cipher et l'alphabet. J'ai donc fait un petit script en python pour automatiser la tâche.<br/><br/>
-<img src="https://media.discordapp.net/attachments/740207755410800720/740955593312960532/unknown.png"/><br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740969151866208297/unknown.png"/><br/><br/>
 On obtient comme résultat "FTCynitic", on insère le flag et hop on se retrouve au prochain challenge. Deuxième étape réussie.<br/><br/>
 ## Troisième Challenge
 Nous voisi au troisième challenge, vous connaissez la chanson, lisons et analysons.<br/><br/>
