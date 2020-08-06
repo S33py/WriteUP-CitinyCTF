@@ -13,7 +13,11 @@ Je vais vous expliquer ce que fait UPX, histoire que vous sachez de quoi on parl
 <img src="https://media.discordapp.net/attachments/736537536054296636/739911499002150912/unknown.png?width=1393&height=343"/><br/><br/>
 Dans l'image au dessus, je me suis rendu au POPAD et j'ai défilé l'instruction MOV qui a affecté le registre ESP (registre qui va délimiter la stack).<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739914059427610745/unknown.png?width=1225&height=656"/><br/><br/>
-Je sélectionne ESP, je fais un clique droit et je clique sur suivre l'interaction du Dump. Ensuite je sélectionne les 4 premiers octets null de ESP, clique droit -> Hardware on access et WORD car ça ne dépasse pas les 4 octets.<br/><br/>
+Je sélectionne ESP, je fais un clique droit et je clique sur suivre l'interaction du Dump. Ensuite je sélectionne les 4 premiers octets null de ESP, clique droit -> Hardware on access et WORD car ça ne dépasse pas les 4 octets. Ensuite on dump le debugged process<br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740986429437640804/unknown.png"/><br/><br/>
+On positionne l'exécutable et on a plus qu'à la refixer et exécuter le prog.<br/><br/>
+<img src="https://media.discordapp.net/attachments/740207755410800720/740986645666463845/unknown.png"/><br/><br/>
+Plus qu'à lancer le programme et hop, plus de Popup.<br/><br/>
 ## Premier Challenge
 Voici le premier challenge, lisons et analysons.<br/><br/>
 <img src="https://media.discordapp.net/attachments/736537536054296636/739916447031099602/unknown.png?width=751&height=269"/><br/><br/>
