@@ -69,6 +69,5 @@ Je compare donc "F" avec "d" à travers les colonnes et j'obtiens la lettre "s".
 J'ai donc continué sur cette voie.<br/><br/>
 <img src="https://media.discordapp.net/attachments/740207755410800720/740958555883962489/unknown.png"/><br/><br/>
 <img src="https://media.discordapp.net/attachments/740207755410800720/740959415628333086/unknown.png"/><br/><br/>
-<img src="https://media.discordapp.net/attachments/740207755410800720/740959785465282641/unknown.png"/><br/><br/>
 J'ai donc fait la même chose pour chaque lettre jusqu'à obtenir le résultat "Seailking". C'est donc le flag final.
 J'ai demandé à Seepy si c'était bien ça et il a confirmé. Je vous remercie d'avoir lu cette WriteUP, il y aura d'autres WriteUPs dans le futur.
